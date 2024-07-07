@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
         <pre id="file-content"></pre>
         <script>
             function loadTextFile() {
-                fetch('https://server-k17w54ytc-kalyansingh05s-projects.vercel.app/file', {
+                fetch('https://server-b-eight.vercel.app/file', {
                     method: 'GET',
                     credentials: 'include'
                 })
