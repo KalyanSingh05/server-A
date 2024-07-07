@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
     res.send(`
@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
         <pre id="file-content"></pre>
         <script>
             function loadTextFile() {
-                fetch('https://server-k17w54ytc-kalyansingh05s-projects.vercel.app:4000/file', {
+                fetch('https://server-k17w54ytc-kalyansingh05s-projects.vercel.app/file', {
                     method: 'GET',
                     credentials: 'include'
                 })
