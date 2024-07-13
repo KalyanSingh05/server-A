@@ -1,31 +1,12 @@
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
 
 app.get('/', (req, res) => {
     res.send(`
         <h1>Server A</h1>
-        <button onclick="loadTextFile()">Load Text File from Server B</button>
-        <pre id="file-content"></pre>
-        <script>
-            function loadTextFile() {
-                fetch('https://server-b-eight.vercel.app/file', {
-                    method: 'GET',
-                    credentials: 'include'
-                })
-                .then(response => {
-                    if (response.ok) {
-                        return response.text();
-                    } else {
-                        throw new Error('Network response was not ok.');
-                    }
-                })
-                .then(data => {
-                    document.getElementById('file-content').textContent = data;
-                })
-                .catch(error => console.error('Error:', error));
-            }
-        </script>
+        <p>To access the secret file, you need to send a GET request to <button><a href ="http://localhost:4000/file">Go To LAB</a></button> with the correct authorization token.</p>
+        <p>Use the appropriate tools to bypass CORS and fetch the content of the file.</p>
     `);
 });
 
